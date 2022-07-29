@@ -1,0 +1,9 @@
+;; shadow-cljs configuration
+{:deps true
+ :npm-deps {:install true}
+
+ :builds
+ {:script
+  {:target :node-script
+   :main library-demo.core/main
+   :output-to "out/d0x-library-demo.js"}}}

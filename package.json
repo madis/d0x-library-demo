@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "web3": "1.7.3"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.19.8"
+  }
+}
