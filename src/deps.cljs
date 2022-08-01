@@ -1,2 +1,5 @@
 {:npm-deps
- {"web3" "1.7.3"}}
+ {
+  "xmlhttprequest" "1.8.0"
+  "request" "2.88.0"
+  }}

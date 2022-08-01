@@ -3,5 +3,6 @@
              "clojars" {:url "https://clojars.org/repo"}}
  :deps
  {thheller/shadow-cljs {:mvn/version "2.19.8"}
-  district0x/district-server-web3-events {:mvn/version "1.1.12"}}
-  mount/mount {:mvn/version "0.1.16"}}
+  district0x/cljs-ipfs-http-client {:mvn/version "1.0.6"}
+  mount/mount {:mvn/version "0.1.16"}
+  cljs-ajax/cljs-ajax {:mvn/version "0.8.4"}}}

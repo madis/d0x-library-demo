@@ -1,9 +1,12 @@
 (ns library-demo.core
-  (:require [library-demo.server-events-demo]))
+  (:require
+    ; [library-demo.server-events-demo]
+    [library-demo.ipfs.demo]
+    ))
 
 (defn main [& cli-args]
-  (println "hello!")
-  (library-demo.server-events-demo/start))
+  ; (library-demo.server-events-demo/start)
+  (library-demo.ipfs.demo/run-demo))
 
 (defn ^:dev/before-load stop []
   (js/console.log "before-load hook: stop"))
