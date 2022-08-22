@@ -2,8 +2,7 @@
   (:require
     [mount.core :as mount :refer [defstate]]
     [cljs.nodejs :as nodejs]
-    [district.server.web3-events]
-    [district.server.web3-events :refer [register-callback! unregister-callbacks!]]))
+    [district.server.web3-events :as web3-events :refer [register-callback! unregister-callbacks!]]))
 
 (def process (nodejs/require "process"))
 
@@ -13,8 +12,6 @@
 (def smart-contracts
   {:ens {:name "ENS" :address "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"}})
 
-(def from-block 12958350)
-
 (-> (mount/with-args
       {:web3 {:url "wss://mainnet.infura.io/ws/v3/fd0074468fd64e36b495c846a26a3f9d"}
        :smart-contracts {:contracts-var #'smart-contracts
@@ -23,5 +20,6 @@
                          }
        :web3-events {:events {:ens/new-owner [:ens :NewOwner]
                               :ens/transfer [:ens :Transfer] }
-                     :from-block 900}})
+                     :block-step 1000
+                     :from-block 12958350}})
     (mount/start))
